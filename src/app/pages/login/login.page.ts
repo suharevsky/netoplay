@@ -28,14 +28,14 @@ export class LoginPage implements OnInit {
   ngOnInit(): void { }
 
   login(): void {
-    this.authService.loading$.next(true);
+    this.loading$.next(true);
 
     if (this.loginForm.status === "VALID") {
       let email = this.loginForm.value.email;
       let password = this.loginForm.value.password;
       this.authService.login(email, password);
     } else {
-      this.authService.loading$.next(false);
+      this.loading$.next(false);
       this.errorService.show("Invalid credentials")
     }
   }
