@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "netoplay",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

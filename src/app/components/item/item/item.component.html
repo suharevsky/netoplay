@@ -1,0 +1,6 @@
+<ion-item class="item" (click)="getItem(item)">
+    <ion-avatar slot="start">
+      <img [src]="item?.avatar | resizeImage:'50'" />
+    </ion-avatar>
+    <div>{{item?.property_name}}</div>
+</ion-item>

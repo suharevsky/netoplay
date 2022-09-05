@@ -1,0 +1,7 @@
+{
+  "name": "netoplay",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

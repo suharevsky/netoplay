@@ -1,0 +1,28 @@
+ion-grid,
+ion-col {
+  padding: 4px 0;
+}
+
+.image-loader {
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative;
+}
+
+.text-loader {
+  height: 28px;
+  margin-top: 12px;
+}
+
+img.ng-lazyloaded {
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="signOut()"><ion-icon name="exit-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <cdk-virtual-scroll-viewport *ngIf="items$ | async; else loading" itemSize="44" minBufferPx="200" maxBufferPx="900" class="viewport">
+      <ng-container *cdkVirtualFor="let item of items$ | async">
+        <app-item [item]="item"></app-item>
+      </ng-container>
+    </cdk-virtual-scroll-viewport>
+    <ng-template #loading>
+    <ion-list>
+      <ion-item *ngFor="let skelItem of [].constructor(12)">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+          </h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+</ion-content>

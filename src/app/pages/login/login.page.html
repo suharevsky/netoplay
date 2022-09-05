@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true">
+    <div class="logo" alt="logo">
+        <img src="/assets/logo.svg"/>    
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <ion-item lines="none">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input autocomplete="off" formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" shape="round" color="secondary" expand="block"><span *ngIf="!(loading$ | async)">Sign In</span><ion-spinner *ngIf="(loading$ | async)"></ion-spinner></ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+</ion-content>
